@@ -1,0 +1,32 @@
+.search-bar-container {
+	position: sticky;
+	z-index: 10;
+	top: 1.8rem;
+}
+
+#default-search::-webkit-search-cancel-button {
+	position: relative;
+	right: 5rem;
+
+	-webkit-appearance: none;
+	height: 15px;
+	width: 15px;
+	background: linear-gradient(
+			45deg,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 0) 43%,
+			rgb(0, 0, 0) 45%,
+			rgb(0, 0, 0) 55%,
+			rgba(0, 0, 0, 0) 57%,
+			rgba(0, 0, 0, 0) 100%
+		),
+		linear-gradient(
+			135deg,
+			transparent 0%,
+			transparent 43%,
+			rgb(0, 0, 0) 45%,
+			rgb(0, 0, 0) 55%,
+			transparent 57%,
+			transparent 100%
+		);
+}

@@ -1,0 +1,27 @@
+/* 🐞 codyhouse.co */
+.text-divider {
+	--text-divider-gap: 1rem;
+	display: flex;
+	align-items: center;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+	padding-bottom: 1.5rem;
+	padding: 1rem 0;
+}
+
+.text-divider::before,
+.text-divider::after {
+	content: "";
+	height: 1px;
+	background-color: rgb(30 41 59);
+	flex-grow: 1;
+}
+
+.text-divider::before {
+	margin-right: var(--text-divider-gap);
+}
+
+.text-divider::after {
+	margin-left: var(--text-divider-gap);
+}
