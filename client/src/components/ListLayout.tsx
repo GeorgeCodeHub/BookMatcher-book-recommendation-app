@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import autoAnimate from "@formkit/auto-animate";
 
 import BookCard from "./BookCard";
-
-import { bookT } from "../vite-env";
 
 import "../styles/ListLayout.scss";
 

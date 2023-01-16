@@ -1,9 +1,7 @@
-import uvicorn
-
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-from .routers import books
+from .routers import books, search
 
 
 app = FastAPI(
@@ -12,6 +10,8 @@ app = FastAPI(
 )
 
 app.include_router(books.router)
+app.include_router(search.router)
+
 
 # Load frontend at root of the server
-app.mount("/", StaticFiles(directory="build/", html=True), name="static")
+app.mount("/", StaticFiles(directory="server/build/", html=True), name="static")

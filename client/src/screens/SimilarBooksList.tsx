@@ -6,6 +6,7 @@ import { setSelectedBook } from "../redux/bookReducer";
 import autoAnimate from "@formkit/auto-animate";
 
 import { http } from "../utils/http";
+import { getSimilarBooks } from "../utils/apis";
 
 import ListLayout from "../components/ListLayout";
 import BookCard from "../components/BookCard";
@@ -27,13 +28,13 @@ function SimilarBooksList({ selectedBook }: { selectedBook: bookT }) {
 	};
 
 	useEffect(() => {
-		if (selectedBook) {
-			http.get("/get_similar_books", { params: { id: selectedBook?.index } }).then(({ data }) => {
-				data.shift();
+		(async () => {
+			if (selectedBook) {
+				const data = await getSimilarBooks(selectedBook?.index);
 
-				setSimilarBooksList(data);
-			});
-		}
+				if (data) setSimilarBooksList(data);
+			}
+		})();
 	}, [selectedBook]);
 
 	useEffect(() => {
