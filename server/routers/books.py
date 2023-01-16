@@ -10,7 +10,7 @@ router = APIRouter(prefix="/books", tags=["books"])
 
 
 @router.get("/get_samples")
-async def get_sample_books(current_books: list[int] | None = []):
+async def get_sample_books(current_books=[]):
 
     # Check if the already shown books have reached the amount in the data base
     if len(current_books) < len(store.original_data):
